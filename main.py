@@ -4,10 +4,10 @@ import sys
 from Popup import Popup
 
 pop = Popup()
-inputFromPop = pop.keywordsInput()
+pop_input = pop.keywords_input()
 
-if inputFromPop is not None:
-    keywords = inputFromPop.strip()
+if pop_input is not None:
+    keywords = pop_input.strip()
 else:
     keywords = ''
 

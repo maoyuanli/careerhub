@@ -7,7 +7,7 @@ class Popup:
     def __init__(self):
         pass
 
-    def keywordsInput(self):
+    def keywords_input(self):
         root = tk.Tk()
         root.withdraw()
         answer: str = simpledialog.askstring("Search for Keywords", "Use space between multiple keywords", parent=root)
