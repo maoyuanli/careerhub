@@ -1,0 +1,19 @@
+import tkinter as tk
+from tkinter import simpledialog, messagebox, Toplevel
+
+
+class Popup:
+
+    def __init__(self):
+        pass
+
+    def keywordsInput(self):
+        root = tk.Tk()
+        root.withdraw()
+        answer: str = simpledialog.askstring("Search for Keywords", "Use space between multiple keywords", parent=root)
+        return answer
+
+    def msgbox(self, msgTitle: str, msgContent: str):
+        root = tk.Tk()
+        root.withdraw()
+        messagebox.showinfo(msgTitle, msgContent)
