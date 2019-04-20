@@ -1,15 +1,15 @@
-import scrapy
-from scrapy.loader.processors import MapCompose, TakeFirst
 import re
+
+import scrapy
+import w3lib.html as w3htlm
+from scrapy.loader.processors import MapCompose, TakeFirst
 
 
 def pre_clean(raw):
     decoded = re.sub(r'[^\x00-\x7F]+', ' ', raw)
-    for unwanted in [r'\\n', r'"']:
-        if unwanted in decoded:
-            return decoded.replace(unwanted, ' ')
-        else:
-            return decoded
+    decoded = decoded.replace(r'"', ' ')
+    decoded = w3htlm.replace_escape_chars(decoded)
+    return decoded
 
 
 class JobItem(scrapy.Item):

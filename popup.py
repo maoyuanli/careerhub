@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import simpledialog, messagebox, Toplevel
+from tkinter import simpledialog, messagebox
 
 
 class Popup:

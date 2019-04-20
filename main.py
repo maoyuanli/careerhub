@@ -1,7 +1,9 @@
-from scrapy.cmdline import execute
 import os
 import sys
-from Popup import Popup
+
+from scrapy.cmdline import execute
+
+from popup import Popup
 
 pop = Popup()
 pop_input = pop.keywords_input()
@@ -16,6 +18,6 @@ if keywords != '':
     try:
         os.remove('data.json')
     finally:
-        execute(["scrapy","crawl","jobs","-a","keywords={0}".format(keywords),"-o","data.json"])
+        execute(["scrapy", "crawl", "jobs", "-a", "keywords={0}".format(keywords), "-o", "data.json"])
 else:
     pop.msgbox('No Keyword Entered', 'Please enter the keyword(s)')

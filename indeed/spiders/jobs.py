@@ -1,5 +1,6 @@
 import scrapy
 from scrapy.loader import ItemLoader
+
 from indeed.items import JobItem
 
 

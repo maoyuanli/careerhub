@@ -1,9 +1,10 @@
+import heapq
+import string
+
+import nltk
 import pandas as pd
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
-import nltk
-import string
-import heapq
 
 
 def process_words(raw, remove_punc=False, add_stopwords=False, stem=False):
