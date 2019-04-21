@@ -1,5 +1,6 @@
 import heapq
 import string
+from collections import Counter
 
 import nltk
 import pandas as pd
@@ -29,7 +30,7 @@ def process_words(raw, remove_punc=False, add_stopwords=False, stem=False):
 
 
 def additional_stopwords():
-    stopwords_file = open('additional_stopwordsList.txt')
+    stopwords_file = open('additional_stopwords.txt')
     return [w.lower().replace('\n', '') for w in stopwords_file.readlines()]
 
 
@@ -54,6 +55,14 @@ def sentence_score(sentences, word_weight_dict: dict):
     return sent_score
 
 
+def top_words(s):
+    words_list = s.split()
+    counter = Counter(words_list)
+    most_tuple = counter.most_common(10)
+    most_list = [e[0] for e in most_tuple]
+    return most_list
+
+
 df = pd.read_json('data.json')
 df.dropna(subset=['descr'], inplace=True)
 df['descr_no_punc'] = df['descr'].apply(lambda x: process_words(x, remove_punc=True))
@@ -61,3 +70,7 @@ df['descr_sent_token'] = df['descr'].apply(lambda x: nltk.sent_tokenize(process_
 df['descr_word_wt'] = df['descr_no_punc'].apply(lambda x: word_weight(x))
 df['descr_sent_score'] = df.apply(lambda df: sentence_score(df['descr_sent_token'], df['descr_word_wt']), axis=1)
 df['descr_summ'] = df['descr_sent_score'].apply(lambda d: heapq.nlargest(3, d, key=d.get))
+df['descr_add_stopword'] = df['descr'].apply(lambda x: process_words(x, remove_punc=True, add_stopwords=True))
+df['descr_top_words'] = df['descr_add_stopword'].apply(lambda x:top_words(x))
+
+result = df[['title','company','descr_top_words','descr_summ','link']]
