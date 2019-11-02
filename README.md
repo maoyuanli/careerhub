@@ -1,7 +1,7 @@
 # About
-Crawls job sites and collects job postings by searching key words.
+A sample ETL application that crawls job posting sites and collects data by searching key words.
 
-Leverages NLTK to summarize the job descriptions.
+It leverages Natural Language Processing model to summarize the job descriptions.
 
 ## How to Use
 Entry point is "main.py". In command line, enter "python main.py" to activate the app.

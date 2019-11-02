@@ -39,4 +39,3 @@ if __name__ == '__main__':
     jdd = JobDescriptionDistiller(r'resources/crawled_jd.json', r'resources/distilled_jd.json')
     jdd.crawl()
     jdd.distill()
-

@@ -11,7 +11,7 @@ class Popup:
         answer: str = simpledialog.askstring("Search for Keywords", "Use space between multiple keywords", parent=root)
         return answer
 
-    def msgbox(self, msgTitle: str, msgContent: str):
+    def msgbox(self, msg_title: str, msg_content: str):
         root = tk.Tk()
         root.withdraw()
-        messagebox.showinfo(msgTitle, msgContent)
+        messagebox.showinfo(msg_title, msg_content)
