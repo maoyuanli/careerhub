@@ -4,12 +4,10 @@ from tkinter import simpledialog, messagebox
 
 class Popup:
 
-    def __init__(self):
-        pass
-
     def keywords_input(self):
         root = tk.Tk()
         root.withdraw()
+        root.geometry('200x100')
         answer: str = simpledialog.askstring("Search for Keywords", "Use space between multiple keywords", parent=root)
         return answer
 
