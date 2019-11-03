@@ -36,10 +36,3 @@ class ProceedButton:
         root.mainloop()
 
 
-if __name__ == '__main__':
-    def print_something():
-        print('this app is easy to use!')
-
-
-    pb = ProceedButton()
-    pb.bind_func(print_something)
