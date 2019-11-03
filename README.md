@@ -8,7 +8,7 @@ Entry point is "extract.py" and "load.py".
 
 In command line, enter "python extract.py" to activate the app.
 
-In the pop-up window, type in the job key words to search, i.e. "python developer".
+In the pop-up window, type in the job key words to search, e.g. "python developer".
 
 Web crawler graps the data from public resource and dumps at "resources/crawled_jd.json".
 
