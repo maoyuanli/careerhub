@@ -7,8 +7,9 @@ class Popup:
     def keywords_input(self):
         root = tk.Tk()
         root.withdraw()
-        root.geometry('200x100')
-        answer: str = simpledialog.askstring('Search for Keywords', 'Use space between multiple keywords', parent=root)
+        answer: str = simpledialog.askstring(r'Search for Keywords',
+                                             'Use space between multiple keywords, e.g. "python developer"',
+                                             parent=root)
         return answer
 
     def msgbox(self, msg_title: str, msg_content: str):
@@ -34,5 +35,3 @@ class ProceedButton:
         ok_button.pack(side=tk.LEFT)
 
         root.mainloop()
-
-
