@@ -21,17 +21,13 @@ View data and result in jupyter notebook.
 ## Use With Docker
 docker command:
 
-* docker build -t careerhub:scrapy .
+* docker build -t careerhub .
 
-* docker run -it careerhub:scrapy bash
+* docker run -it -p 8888:8888 careerhub bash
 
 * python extract.py
 
 * python load.py
-
-run jupyter in docker:
-
-* docker run -it -p 8888:8888 careerhub bash
 
 * jupyter lab --ip=0.0.0.0 --allow-root
 
