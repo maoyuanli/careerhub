@@ -4,3 +4,6 @@ careerhubve/
 *.pyc
 *.pyc
 __pycache__
+.ipynb_checkpoints/
+code
+/coverage

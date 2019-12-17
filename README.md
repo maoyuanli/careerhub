@@ -16,15 +16,24 @@ After the crawling process is finished, inspect the crawled data, if satisfied, 
 
 The summarized information is then saved at "resources/distilled_jd.json".
 
+View data and result in jupyter notebook.
+
 ## Use With Docker
-docker build -t careerhub:scrapy .
+docker command:
 
-docker run -it careerhub:scrapy bash
+* docker build -t careerhub:scrapy .
 
-python extract.py
+* docker run -it careerhub:scrapy bash
 
-python load.py
+* python extract.py
 
+* python load.py
+
+run jupyter in docker:
+
+* docker run -it -p 8888:8888 careerhub bash
+
+* jupyter lab --ip=0.0.0.0 --allow-root
 
 ## Caveat
 API of public job posting resources may change.
