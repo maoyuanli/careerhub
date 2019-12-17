@@ -8,13 +8,23 @@ Entry point is "extract.py" and "load.py".
 
 In command line, enter "python extract.py" to activate the app.
 
-In the pop-up window, type in the job key words to search, e.g. "python developer".
+In the command line, type in the job key words to search, e.g. "python developer".
 
 Web crawler graps the data from public resource and dumps at "resources/crawled_jd.json".
 
 After the crawling process is finished, inspect the crawled data, if satisfied, run "python load.py" to distill the job descriptions. 
 
 The summarized information is then saved at "resources/distilled_jd.json".
+
+## Use With Docker
+docker build -t careerhub:scrapy .
+
+docker run -it careerhub:scrapy bash
+
+python extract.py
+
+python load.py
+
 
 ## Caveat
 API of public job posting resources may change.

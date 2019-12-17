@@ -17,8 +17,8 @@ class JobDescriptionCrawler:
         self.output = output
 
     def crawl(self):
-        pop = Popup()
-        pop_input = pop.keywords_input()
+        # pop = Popup()
+        pop_input = input('please enter keywords with space between(e.g. "python developer") :')
 
         if pop_input is not None:
             keywords = pop_input.strip()
@@ -32,7 +32,7 @@ class JobDescriptionCrawler:
             finally:
                 execute(['scrapy', 'crawl', 'jobs', '-a', 'keywords={0}'.format(keywords), '-o', self.source])
         else:
-            pop.msgbox('No Keyword Entered', 'Please enter the keyword(s)')
+            print('No Keyword Entered', 'Please restart and enter the keyword(s)')
 
 
 class JobDescriptionETL:
