@@ -1,3 +1,4 @@
+# input UI available; currently using terminal to make things simple in docker
 import tkinter as tk
 from tkinter import simpledialog, messagebox
 

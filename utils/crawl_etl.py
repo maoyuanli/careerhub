@@ -12,8 +12,7 @@ from utils.popup import Popup
 
 
 class JobDescriptionCrawler:
-    def __init__(self, source, output):
-        self.source = source
+    def __init__(self,  output):
         self.output = output
 
     def crawl(self):
@@ -28,9 +27,9 @@ class JobDescriptionCrawler:
         if keywords != '':
             sys.path.append(os.path.dirname(os.path.abspath(__file__)))
             try:
-                os.remove(self.source)
+                os.remove(self.output)
             finally:
-                execute(['scrapy', 'crawl', 'jobs', '-a', 'keywords={0}'.format(keywords), '-o', self.source])
+                execute(['scrapy', 'crawl', 'jobs', '-a', 'keywords={0}'.format(keywords), '-o', self.output])
         else:
             print('No Keyword Entered', 'Please restart and enter the keyword(s)')
 
