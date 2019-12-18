@@ -2,7 +2,9 @@ version: "3"
 
 services:
   jupyter:
-    build: .
+    build:
+      dockerfile: Dockerfile
+      context: .
     ports:
       - "8888:8888"
     command: jupyter lab --ip=0.0.0.0 --allow-root

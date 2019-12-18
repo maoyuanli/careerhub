@@ -19,7 +19,6 @@ The summarized information is then saved at "resources/distilled_jd.json".
 View data and result in jupyter notebook.
 
 ## Use With Docker
-docker command:
 
 * docker build -t careerhub .
 
@@ -31,15 +30,10 @@ docker command:
 
 * jupyter lab --ip=0.0.0.0 --allow-root
 
-docker compose:
-
-* docker-compose up
-
-* then run "python extract.py" and "python extract.py" in terminal
 
 ## Caveat
 API of public job posting resources may change.
 
 Using Virtual Environments in Jupyter Notebook: 
 * python -m ipykernel install --user --name="virtual environment name"
-* no need to run this if using docker-compose
+* no need to run this if using docker
