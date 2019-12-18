@@ -39,3 +39,7 @@ docker compose:
 
 ## Caveat
 API of public job posting resources may change.
+
+Using Virtual Environments in Jupyter Notebook: 
+* python -m ipykernel install --user --name=<virtual env name>
+* no need to run this if using docker-compose
