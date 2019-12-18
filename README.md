@@ -1,5 +1,5 @@
 # About
-A sample ETL application that crawls job posting sites and collects data by searching key words.
+An ETL application that crawls job posting sites and collects data by searching key words.
 
 It leverages Natural Language Processing model to summarize the job descriptions.
 
@@ -41,5 +41,5 @@ docker compose:
 API of public job posting resources may change.
 
 Using Virtual Environments in Jupyter Notebook: 
-* python -m ipykernel install --user --name=<virtual env name>
+* python -m ipykernel install --user --name="virtual environment name"
 * no need to run this if using docker-compose
