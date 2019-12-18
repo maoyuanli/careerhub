@@ -8,7 +8,7 @@ Entry point is "extract.py" and "load.py".
 
 In command line, enter "python extract.py" to activate the app.
 
-In the command line, type in the job key words to search, e.g. "python developer".
+In the prompt, type in the job key words to search, e.g. "python developer".
 
 Web crawler graps the data from public resource and dumps at "resources/crawled_jd.json".
 
@@ -30,6 +30,12 @@ docker command:
 * python load.py
 
 * jupyter lab --ip=0.0.0.0 --allow-root
+
+docker compose:
+
+* docker-compose up
+
+* then run "python extract.py" and "python extract.py" in terminal
 
 ## Caveat
 API of public job posting resources may change.
